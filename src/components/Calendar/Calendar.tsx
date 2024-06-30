@@ -6,11 +6,8 @@ import type { RaceEvent } from "@/types/raceEvent"
 import { useCallback } from "react"
 import {
 	type Components,
-	type DateRange,
 	type EventPropGetter,
-	type Messages,
 	Calendar as ReactCalendar,
-	type View,
 	luxonLocalizer,
 } from "react-big-calendar"
 import { DayEvent } from "./DayEvent"
@@ -32,10 +29,8 @@ const components: Components<RaceEvent> = {
 }
 
 export const Calendar = ({ events }: Props) => {
-	const a = ""
-
 	const getEventStyles = useCallback<EventPropGetter<RaceEvent>>(
-		(e) => ({
+		() => ({
 			className: cn("bg-pink-600"),
 		}),
 		[],
